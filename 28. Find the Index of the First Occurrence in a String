@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        int start =0;
+        int end=0;
+        int ans =0;
+        bool reverse =false;
+        for(int i=0;i<haystack.length();i++){
+            start = i;
+            end = needle.length();
+            ans = i;
+            int w = 0;
+            for(int j=start;j<(end+start);j++){
+                if(needle[w]==haystack[j]){
+                    reverse = true;
+                }
+                else{
+                    reverse = false;
+                    break;
+                }
+                w++;
+            }
+            if(reverse==true){
+                return ans;
+            }
+        }
+        return -1;
+    }
+};
